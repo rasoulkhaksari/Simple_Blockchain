@@ -47,18 +47,58 @@ A ledger is a record-keeping book that stores all the transactions of an organiz
 ![transactions](transactions.jpg)
 
 ## **Components**
-- ### **Web API application**
+- ### **Web API application (endpoints)**
+  - blocks
+  - mine
+  - transactions
+  - transact
+  - public-key
+  - mine-transactions
 - ### **Block**
   - timestamp
   - lastHash
   - hash
   - The data to store
 - ### **Blockchain**
+  - chain
+  - addBlock()
+  - isValidChain()
+  - replaceChain()
 - ### **Wallet**
+  - balance
+  - keyPair
+  - publicKey
+  - sign()
 - ### **Transaction**
+  - id
+  - input
+  - output
+  - create()
+  - update()
+  - verify()
 - ### **Transaction Pool**
+  - transactions
+  - updateOrAddTransaction()
+  - validTransactions()
+  - clear()
 - ### **Miner**
+  - blockchain
+  - transactionPool
+  - wallet
+  - p2pServer
+  - mine()
 - ### **Peer-to-Peer server**
+  - blockchain
+  - transactionPool
+  - sockets
+  - listen()
+  - connectToPeers()
+  - connectSocket()
+  - HandleMessage()
+  - sendChain()
+  - syncChains()
+  - sendTransaction()
+  - broadcastTransaction()
 
 <br><br>
  
