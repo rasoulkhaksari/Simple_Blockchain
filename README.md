@@ -61,13 +61,15 @@ A ledger is a record-keeping book that stores all the transactions of an organiz
 - ### **Peer-to-Peer server**
 
 <br><br>
-
-
+ 
+ 
 ## **How to run the application**
 - **$npm run test** Apply all unit tests 
 - **$npm run dev-test** Run development tests written in dev-test.js
 - **$npm start** Start Blockchain and its web API 
-- **$npm run dev** Start Blockchain and its web API for development assessments, you can now use Postman tool to work with Blockchain web API interface 
+- **$npm run dev** Start Blockchain and its web API for development assessments, you can now use Postman tool to work with Blockchain 
+
+- web API interface 
   - default HTTP_PORT is 3001
   - GET  http://localhost:3001/blocks : express Blockchain blocks
   - POST http://localhost:3001/mine :   mine new block(pass block data as http post json data)
@@ -76,6 +78,9 @@ A ledger is a record-keeping book that stores all the transactions of an organiz
   - GET  http://localhost:3001/public-key : get wallet address
   - GET  http://localhost:3001/mine-transactions : complete Blockchain transactions by miner
 
-
+- to run first server
+  - $npm run dev
+- to run other sample servers
+  - $HTTP_PORT=3002 P2P_PORT=5002 PEERS=ws://localhost:5001 npm run dev
 
 
