@@ -102,7 +102,15 @@ A ledger is a record-keeping book that stores all the transactions of an organiz
 
 <br><br>
  
+## **proof of work system**
+- A system that requires miners to do computational work(mining) to add blocks
+- Any peer can replace the blockchain
+- The proof-of-work makes it expensive to generate corrupt chains
+- Manageable to submit one block, unproductive to generate an entire chain 
+- The difficulty sets a rate of mining
  
+<br><br>
+
 ## **How to run the application**
 - **$npm run test** Apply all unit tests 
 - **$npm run dev-test** Run development tests written in dev-test.js
