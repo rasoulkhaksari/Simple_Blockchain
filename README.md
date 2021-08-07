@@ -47,13 +47,20 @@ A ledger is a record-keeping book that stores all the transactions of an organiz
 ![transactions](transactions.jpg)
 
 ## **Components**
-### **Block**
-- timestamp
-- lastHash
-- hash
-- The data to store
+- ### **Web API application**
+- ### **Block**
+  - timestamp
+  - lastHash
+  - hash
+  - The data to store
+- ### **Blockchain**
+- ### **Wallet**
+- ### **Transaction**
+- ### **Transaction Pool**
+- ### **Miner**
+- ### **Peer-to-Peer server**
 
-
+<br><br>
 
 
 ## **How to run the application**
