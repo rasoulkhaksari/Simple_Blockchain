@@ -6,7 +6,6 @@ class Wallet {
     constructor() {
         this.balance = INITIAL_BALANCE;
         this.keyPair = ChainUtil.genKeyPair();
-        // this.publicKey = this.keyPair.publicKey.toString('hex');
         this.publicKey = this.keyPair.getPublic().encode('hex');
     }
 
@@ -18,8 +17,6 @@ class Wallet {
 
     sign(dataHash) {
         return this.keyPair.sign(dataHash);
-        // return this.keyPair.privateKey.sign(dataHash);
-        // return ed25519.sign({ message: dataHash, encoding: 'utf8', privateKey: this.keyPair.privateKey })
     }
 
     createTransaction(recipient, amount, blockchain, transactionPool) {
@@ -51,10 +48,7 @@ class Wallet {
             transactions.push(transaction);
         }));
 
-        // console.log(transactions);
-        transactions.forEach(t=>console.log(t));
-
-        const walletInputTs = transactions.filter(transaction => transaction.input.address = this.publicKey);
+        const walletInputTs = transactions.filter(transaction => transaction.input.address === this.publicKey);
 
         let startTime = 0;
         if (walletInputTs.length > 0) {

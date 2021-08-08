@@ -33,32 +33,25 @@ describe('Wallet', () => {
         });
     });
 
-    // describe('calculating a balance', () => {
-    //     let addBalance, repeatAdd, senderWallet;
-    //     beforeEach(() => {
-    //         senderWallet = new Wallet();
-    //         addBalance = 100;
-    //         repeatAdd = 1;
-    //         for (let i = 0; i < repeatAdd; i++) { senderWallet.createTransaction(wallet.publicKey, addBalance, bc, tp); }
-    //         bc.addBlock(tp.transactions);
-    //     });
+    describe('calculating a balance', () => {
+        let addBalance, repeatAdd, senderWallet;
+        beforeEach(() => {
+            senderWallet = new Wallet();
+            addBalance = 100;
+            repeatAdd = 3;
+            for (let i = 0; i < repeatAdd; i++) { senderWallet.createTransaction(wallet.publicKey, addBalance, bc, tp); }
+            bc.addBlock(tp.transactions);
+        });
 
+        it('calculates the balance for blockchain transactions matching the recipient', () => {
+            expect(wallet.calculateBalance(bc)).toEqual(INITIAL_BALANCE + (addBalance * repeatAdd));
+        });
 
-    //     it('wallet initial balance', () => {
-    //         // console.log(senderWallet);
-    //         // console.log(bc);    
-    //         expect(wallet.calculateBalance(bc)).toEqual(INITIAL_BALANCE+(addBalance * repeatAdd));
-    //     });
+        it('calculates the balance for blockchain transactions matching the sender', () => {
+            expect(senderWallet.calculateBalance(bc)).toEqual(INITIAL_BALANCE - (addBalance * repeatAdd));
+        });
 
-    //     // it('calculates the balance for blockchain transactions matching the recipient', () => {
-    //     //     expect(wallet.calculateBalance(bc)).toEqual(INITIAL_BALANCE + (addBalance * repeatAdd));
-    //     // });
-
-    //     // it('calculates the balance for blockchain transactions matching the sender', () => {
-    //     //     expect(senderWallet.calculateBalance(bc)).toEqual(INITIAL_BALANCE - (addBalance * repeatAdd));
-    //     // });
-
-    // });
+    });
 
 
 });

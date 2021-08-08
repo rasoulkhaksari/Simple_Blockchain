@@ -35,12 +35,6 @@ class Transaction {
             return;
         }
 
-        /* transaction.outputs.push(...[
-            { amount: senderWallet.balance - amount, address: senderWallet.publicKey },
-            { amount, address: recipient }
-        ]);
-        Transaction.signTransaction(transaction, senderWallet);
-        return transaction; */
         return Transaction.transactionWithOutputs(senderWallet, [
             { amount: senderWallet.balance - amount, address: senderWallet.publicKey },
             { amount, address: recipient }
