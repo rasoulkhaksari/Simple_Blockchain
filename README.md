@@ -44,6 +44,16 @@ A ledger is a record-keeping book that stores all the transactions of an organiz
       - Miners are rewarded for adding a block to the chain
       - The difficulty can adjust to control the rate of new blocks coming in
 
+## **Wallet**
+- Store the balance of an individual
+- Store an individual's private key(to generate signatures) and public key(to verify signatures, also as wallet public address)
+
+## **Miner**
+- Take transactions from the pool and store them into blocks
+- Recieve rewards for mining
+- Transactions go from `unconfirmed` in the pool to `confirmed` in the chain
+
+
 ![transactions](transactions.jpg)
 
 ## **Components**
